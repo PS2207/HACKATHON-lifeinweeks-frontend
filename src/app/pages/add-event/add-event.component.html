@@ -1,0 +1,28 @@
+<h2>Add New Event</h2>
+
+<form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+  <label>Title</label>
+  <input type="text" formControlName="title" />
+  
+
+  <label>Description</label>
+  <textarea formControlName="description"></textarea>
+
+  <label>Date (dd-mm-yyyy)</label>
+  <input type="date" formControlName="date" />
+ 
+  <label>Category</label>
+  <select formControlName="category">
+    <option value="">-- Select Category --</option>
+    <option value="Personal">Personal</option>
+    <option value="Milestone">Milestone</option>
+    <option value="Work">Work</option>
+    <option value="Education">Education</option>
+  </select>
+
+  <button type="submit">Add Event</button>
+
+  <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+  <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+</form>
+

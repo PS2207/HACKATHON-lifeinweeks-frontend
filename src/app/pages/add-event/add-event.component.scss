@@ -1,0 +1,21 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  gap: 10px;
+}
+
+input, textarea {
+  padding: 5px;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}
+input, textarea, select {
+  padding: 5px;
+}

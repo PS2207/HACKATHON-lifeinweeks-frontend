@@ -1,0 +1,19 @@
+<div class="login-container">
+  <h2>Login</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <label for="username">Username:</label>
+    <input id="username" type="text" formControlName="username" placeholder="Enter username" />
+
+    <label for="password">Password:</label>
+    <input id="password" type="password" formControlName="password" placeholder="Enter password" />
+
+    <button type="submit">Login</button>
+
+    <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <p class="register-link">
+      Don't have an account?
+      <a routerLink="/register"style="cursor: pointer;" class="custom-link">Register here</a>
+    </p>
+  </form>
+</div>
