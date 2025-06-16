@@ -1,15 +1,16 @@
-<h2>Add New Event</h2>
 
-<form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+
+<form [formGroup]="eventForm" (ngSubmit)="onSubmit()" style="display: flex; flex-direction: column; gap: 12px; max-width: 400px;">
+  <h2>Add New Event</h2>
   <label>Title</label>
-  <input type="text" formControlName="title" />
+  <input type="text" formControlName="title" required />
   
 
   <label>Description</label>
-  <textarea formControlName="description"></textarea>
+  <textarea formControlName="description" required ></textarea>
 
   <label>Date (dd-mm-yyyy)</label>
-  <input type="date" formControlName="date" />
+  <input type="date" formControlName="date" required />
  
   <label>Category</label>
   <select formControlName="category">

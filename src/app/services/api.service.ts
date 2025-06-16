@@ -36,7 +36,9 @@ export class ApiService {
   }
 
   deleteEvent(userId: number, eventId: number): Observable<any> {
-    return this.http.delete(`${this.eventBaseUrl}/user/${userId}/${eventId}/delete`);
-  }
-}
+    return this.http.delete(`${this.eventBaseUrl}/user/${userId}/${eventId}/delete`,
+    {responseType: 'text' as 'json'}
+  )
+ }
 
+}

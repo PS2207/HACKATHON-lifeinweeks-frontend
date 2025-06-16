@@ -1,21 +1,69 @@
 form {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  gap: 10px;
-}
+  max-width: 500px;
+  margin: 60px auto 30px auto; // ⬅️ Pushes form a little down from top
+  padding: 24px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
-input, textarea {
-  padding: 5px;
-}
+  h2 {
+    text-align: center;
+    margin-bottom: 16px; // ⬅️ Slightly reduced to pull fields closer
+    color: #333;
+  }
 
-.success {
-  color: green;
-}
+  label {
+    display: block;
+    margin-top: 12px; // ⬅️ Slightly tighter spacing
+    font-weight: 600;
+    color: #333;
+  }
 
-.error {
-  color: red;
-}
-input, textarea, select {
-  padding: 5px;
+  input,
+  textarea,
+  select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box; // ⬅️ Correct place, no duplicate needed outside
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  .success,
+  .error {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  .success {
+    color: green;
+  }
+
+  .error {
+    color: red;
+  }
 }

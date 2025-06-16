@@ -4,7 +4,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { TimelineComponent } from './pages/timeline/timeline.component';
 
-export const appRoutes: Routes = [  // ✅ Renamed to appRoutes
+export const appRoutes: Routes = [  
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },

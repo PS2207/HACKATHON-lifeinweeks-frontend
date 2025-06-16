@@ -30,10 +30,14 @@ export class AddEventComponent {
     const userId = localStorage.getItem('userId');
     if (this.eventForm.valid && userId) {
       this.apiService.createEvent(+userId, this.eventForm.value).subscribe({
-        next: () => {
+
+      next: () => {
           this.successMessage = 'Event added successfully!';
+          this.errorMessage = '';
+          this.eventForm.reset();
           setTimeout(() => this.router.navigate(['/timeline']), 2000);
-        },
+      },
+
         error: () => {
           this.errorMessage = 'Failed to add event';
         }

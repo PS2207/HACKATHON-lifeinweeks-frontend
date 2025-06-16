@@ -11,7 +11,7 @@ export const appConfig = {
     provideHttpClient(),
     provideRouter(appRoutes),
     provideAnimations(),
-    importProvidersFrom(ReactiveFormsModule)  // ✅ fix for formGroup error
+    importProvidersFrom(ReactiveFormsModule)  // fix for formGroup error
   ]
 };
 

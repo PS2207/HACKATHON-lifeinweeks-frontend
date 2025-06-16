@@ -32,7 +32,8 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       this.apiService.loginUser(this.loginForm.value).subscribe({
         next: (res) => {
-          localStorage.setItem('username', this.loginForm.value.username);
+          localStorage.setItem('username', res.username);
+          localStorage.setItem('userId', res.id.toString());
           this.router.navigate(['/timeline']);
         },
         error: () => {

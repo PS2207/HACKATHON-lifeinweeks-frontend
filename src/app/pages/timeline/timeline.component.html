@@ -1,17 +1,37 @@
 <div class="timeline-container">
   <form [formGroup]="eventForm" (ngSubmit)="onSubmit()" class="event-form">
-    <input formControlName="title" placeholder="Title" required>
-    <textarea formControlName="description" placeholder="Description" required></textarea>
-    <input formControlName="date" type="date" required>
-    <button type="submit">{{ editMode ? 'Update' : 'Add' }} Event</button>
+    <h2>{{ editMode ? 'Update Event' : 'Add New Event' }}</h2>
+
+    <label>Title</label>
+    <input type="text" formControlName="title" placeholder="Enter title" />
+
+    <label>Description</label>
+    <textarea formControlName="description" placeholder="Enter description"></textarea>
+
+    <label>Date</label>
+    <input type="date" formControlName="date" />
+
+    <label>Category</label>
+    <select formControlName="category">
+      <option value="">-- Select Category --</option>
+      <option value="Personal">Personal</option>
+      <option value="Milestone">Milestone</option>
+      <option value="Work">Work</option>
+      <option value="Education">Education</option>
+    </select>
+
+    <button type="submit" >{{ editMode ? 'Update' : 'Add' }} Event</button>
     <button type="button" *ngIf="editMode" (click)="resetForm()">Cancel</button>
+
+    <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+    <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
   </form>
 
   <div class="event-list">
     <div class="event-card" *ngFor="let event of events">
       <h3>{{ event.title }}</h3>
       <p>{{ event.description }}</p>
-      <small>{{ event.date }}</small>
+      <small>Date: {{ event.date }} | Category: {{ event.category }}</small>
       <div class="actions">
         <button (click)="onEdit(event)">Edit</button>
         <button (click)="onDelete(event.id)">Delete</button>
@@ -19,6 +39,3 @@
     </div>
   </div>
 </div>
-
-
-
