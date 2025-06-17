@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from '../../environments/environment.prod';//import this for production
-//import { environment } from '../../environments/environment'; //for development
+//for production :automatically will be eplaced with .prod.ts file don't need to import .prod here
+import { environment } from '../../environments/environment'; //for development
 
 @Injectable({
   providedIn: 'root'
