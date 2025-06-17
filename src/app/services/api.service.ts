@@ -6,8 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  private userBaseUrl = 'http://localhost:8081/api/user';
-  private eventBaseUrl = 'http://localhost:8081/api/event';
+  //private userBaseUrl = 'http://localhost:8081/api/user';
+  //private eventBaseUrl = 'http://localhost:8081/api/event';
+//For more flexibility while deploying -> create folder 'src/environment' within this -> 2 files '.ts & .prod.ts' & put url there then use this
+  private userBaseUrl = '${environment.apiUrl}/user'
+  private eventBaseUrl = '${environment.apiUrl}/event'
 
   constructor(private http: HttpClient) {}
 
