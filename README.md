@@ -28,13 +28,21 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 To Start Angular app - 'ng serve' (now hit this url on a browser-  http://localhost:4200/)
 All these funcionalities are added in this frontent Algular GUI-
-✅ User login & registration
+✅ User login & registration page
 ✅ Event creation, viewing, updating, and deleting
 ✅ Messages for success and error handling
-✅ GitHub repo updated
 
 
+You only need to build locally if:
+ You're going to manually deploy your Angular app to Netlify.
+ You want to test the production version before deployment.
+ You're not using automatic build from GitHub.
 
+To build the project manually - run 'ng build --configuration=production'
+
+Netlify pulls github code & run the follwing commands by itself:
+npm install
+ng build --configuration=production
 
 
 
