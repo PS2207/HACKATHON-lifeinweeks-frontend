@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment.prod';//import this for production
+//import { environment } from '../../environments/environment'; //for development
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +11,8 @@ export class ApiService {
   //private userBaseUrl = 'http://localhost:8081/api/user';
   //private eventBaseUrl = 'http://localhost:8081/api/event';
 //For more flexibility while deploying -> create folder 'src/environment' within this -> 2 files '.ts & .prod.ts' & put url there then use this
-  private userBaseUrl = '${environment.apiUrl}/user'
-  private eventBaseUrl = '${environment.apiUrl}/event'
+  private userBaseUrl = `${environment.apiUrl}/user`
+  private eventBaseUrl = `${environment.apiUrl}/event`
 
   constructor(private http: HttpClient) {}
 

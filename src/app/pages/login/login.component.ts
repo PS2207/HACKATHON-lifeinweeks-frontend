@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 import { Router, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { ApiService } from '../../services/api.service'; // ✅ Correct import
+import { ApiService } from '../../services/api.service'; 
 
 @Component({
   selector: 'app-login',
@@ -30,13 +30,16 @@ export class LoginComponent {
 
   onSubmit(): void {
     if (this.loginForm.valid) {
+      console.log("this.loginForm.value")
       this.apiService.loginUser(this.loginForm.value).subscribe({
         next: (res) => {
+          console.log('Login Success Response:', res); // Log response
           localStorage.setItem('username', res.username);
           localStorage.setItem('userId', res.id.toString());
           this.router.navigate(['/timeline']);
         },
-        error: () => {
+        error: (err) => {
+          console.error('Login Error:', err); // Log error
           this.errorMessage = 'Invalid username or password.';
         }
       });
