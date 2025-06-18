@@ -12,16 +12,8 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
-      
-      "architect": {
-       "fileReplacements": [
-          {
-           "replace": "src/environments/environment.ts",
-           "with": "src/environments/environment.prod.ts"
-          }
-        ],
-        
+      "prefix": "app",      
+      "architect": {        
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
@@ -44,6 +36,12 @@
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                 "replace": "src/environments/environment.ts",
+                 "with": "src/environments/environment.prod.ts"
+                }
+               ],
               "budgets": [
                 {
                   "type": "initial",
