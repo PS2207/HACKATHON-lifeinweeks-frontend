@@ -19,11 +19,11 @@ export class ApiService {
   // 🔹 USER APIs
 
   loginUser(credentials: any): Observable<any> {
-    return this.http.post(`${this.userBaseUrl}/login`, credentials);
+    return this.http.post(`${this.userBaseUrl}/login`, credentials, { withCredentials: true });
   }
 
   registerUser(data: any): Observable<any> {
-    return this.http.post(`${this.userBaseUrl}/register`, data);
+    return this.http.post(`${this.userBaseUrl}/register`, data, { withCredentials: true });
   }
 
   // 🔹 EVENT APIs
